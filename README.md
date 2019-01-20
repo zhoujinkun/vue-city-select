@@ -89,7 +89,7 @@ exports.getSearchList = (text,list,canSearchSpell)=>{
 }
 ```
 
-这里呢有人会说reg2和reg4、reg5不一样吗，直接使用reg2不就可以了吗，但是试过之后就会发现根本不管用，这里我暂时还不能讲出原因来
+这里呢有人会说reg2和reg4、reg5不一样吗，直接使用reg2不就可以了吗，但是试过之后就会发现根本不管用，这里我暂时还讲不出原因来
 
 
 
