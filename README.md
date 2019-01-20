@@ -2,7 +2,7 @@
       
 ## 效果如下:  
 
-![Image text](E:\Code\项目\vue-city-select\vcityselect\static\choseCity.gif)
+![Image text](.\vcityselect\static\choseCity.gif)
 
   这个组件的制作基本上与该GitHub上的制作代码基本相同，我自己添加了一些小功能，可以说是仿写的吧，毕竟才疏学浅。
 
