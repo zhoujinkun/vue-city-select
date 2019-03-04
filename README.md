@@ -1,10 +1,9 @@
-# 想到做这个，是因为无意中在github上看到了这一个仓库<https://github.com/lunlunshiwo/ChooseCity>，做的就是一个城市选择控件，是用vue写的，自己也试着模写一遍
+
       
 ## 效果如下:  
 
 ![Image text](./vcityselect/static/choseCity.gif)
 
-  这个组件的制作基本上与该GitHub上的制作代码基本相同，我自己添加了一些小功能，可以说是仿写的吧，毕竟才疏学浅。
 
 ## 1.定位服务
 ```
@@ -51,45 +50,6 @@ app.get('/nowcity', function (req, res) {
      });
 ```
 
-
-
-## 2.正则  
-
-话说正则是我最头疼的事情。
-```
-//正则表达式
-exports.getSearchList = (text,list,canSearchSpell)=>{
-    const reg1 = /^[a-z,A-Z]+$/g ;//检测是否为字母
-    const reg2 = new RegExp(`^${text}`,'g');//匹配以text为开头
-    const reg3 = new RegExp(`^[\u4e00-\u9fa5]+$`,'g'); //检测是不是汉字
-    const reg4 = new RegExp(`^${text}`,'g');//匹配以汉字为开头
-    const reg5 = new RegExp(`^${text}`,'g');//匹配以acronym开头
-    let resList = [];
-    //当text为拼音时
-    if(text.match(reg1) && canSearchSpell){
-        for(let i=0,len1=list.length;i<len1;i++){
-            for(let j=0,len2=list[i][1].length;j<len2;j++){
-                if(list[i][1][j].pinyin.match(reg2)){
-                    resList.push(list[i][1][j]);
-                }else if(list[i][1][j].acronym.match(reg5)){
-                    resList.push(list[i][1][j]);
-                }
-            }
-        }//当text为拼音时
-    }else if(reg3.test(text)){
-        for(let i=0,len1=list.length;i<len1;i++){
-            for(let j=0,len2=list[i][1].length;j<len2;j++){
-                if(list[i][1][j].name.match(reg4)){
-                    resList.push(list[i][1][j]);
-                }
-            }
-        }
-    }
-    return resList;
-}
-```
-
-这里呢有人会说reg2和reg4、reg5不一样吗，直接使用reg2不就可以了吗，但是试过之后就会发现根本不管用，这里我暂时还讲不出原因来
 
 
 
